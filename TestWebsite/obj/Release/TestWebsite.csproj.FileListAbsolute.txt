@@ -5,3 +5,11 @@ C:\projects\BitlyDotNET\TestWebsite\bin\BitlyDotNET.pdb
 C:\projects\BitlyDotNET\TestWebsite\obj\Release\ResolveAssemblyReference.cache
 C:\projects\BitlyDotNET\TestWebsite\obj\Release\TestWebsite.dll
 C:\projects\BitlyDotNET\TestWebsite\obj\Release\TestWebsite.pdb
+C:\Repositories\bitly-dot-net\TestWebsite\bin\TestWebsite.dll.config
+C:\Repositories\bitly-dot-net\TestWebsite\bin\TestWebsite.dll
+C:\Repositories\bitly-dot-net\TestWebsite\bin\TestWebsite.pdb
+C:\Repositories\bitly-dot-net\TestWebsite\bin\BitlyDotNET.dll
+C:\Repositories\bitly-dot-net\TestWebsite\bin\BitlyDotNET.pdb
+C:\Repositories\bitly-dot-net\TestWebsite\obj\Release\TestWebsite.csprojResolveAssemblyReference.cache
+C:\Repositories\bitly-dot-net\TestWebsite\obj\Release\TestWebsite.dll
+C:\Repositories\bitly-dot-net\TestWebsite\obj\Release\TestWebsite.pdb

@@ -4,6 +4,57 @@
         <name>BitlyDotNET</name>
     </assembly>
     <members>
+        <member name="T:BitlyDotNET.Exceptions.Reason">
+            <summary>
+            Defines the possible reasons for the library to throw an exception
+            </summary>
+        </member>
+        <member name="F:BitlyDotNET.Exceptions.Reason.CallForbidden">
+            <summary>
+            The library was unable to initiate a call to the API due to a lack of permissions.
+            <para>
+            	Usually, this happens when a <see href="http://msdn.microsoft.com/en-us/library/system.net.webpermission.aspx">System.Net.WebPermission</see> is thrown by the framework.
+            	You might want to add the following line in your config files to resolve this issue:
+            	<code><trust level="Medium" originUrl="https?://api\.bit\.ly/.+" /></code>
+            </para>
+            </summary>
+        </member>
+        <member name="F:BitlyDotNET.Exceptions.Reason.MethodNotFound">
+            <summary>
+            The requested file/method could not be found on the remote server
+            </summary>
+        </member>
+        <member name="F:BitlyDotNET.Exceptions.Reason.UnableToParseResponse">
+            <summary>
+            The API returned data in an unexpected format
+            </summary>
+        </member>
+        <member name="T:BitlyDotNET.Exceptions.BitlyDotNETException">
+            <summary>
+            Represents an exception that can be thrown by the library when a critical
+            condition prevents a successful communication with the API.
+            </summary>
+        </member>
+        <member name="P:BitlyDotNET.Exceptions.BitlyDotNETException.Reason">
+            <summary>
+            Gets the reason behind the creation of this exception
+            </summary>
+        </member>
+        <member name="P:BitlyDotNET.Interfaces.IBitlyResponse.StatusCode">
+            <summary>
+            The <see cref="P:BitlyDotNET.Interfaces.IBitlyResponse.StatusCode">status code</see> for this request
+            </summary>
+        </member>
+        <member name="P:BitlyDotNET.Interfaces.IBitlyResponse.LongUrl">
+            <summary>
+            The long URL
+            </summary>
+        </member>
+        <member name="P:BitlyDotNET.Interfaces.IBitlyResponse.ShortUrl">
+            <summary>
+            The shortened URL corresponding to <paramref name="LongUrl"/> or null if unsuccessful
+            </summary>
+        </member>
         <member name="T:BitlyDotNET.Implementations.BitlyService">
             <summary>
             Implements the IBitlyService interface
@@ -50,6 +101,14 @@
             	The parameter <paramref name="url"/> shouldn't be URL-escaped as a whole, but any parameters in the query string should be.
             </para>
             </remarks>
+        </member>
+        <member name="M:BitlyDotNET.Interfaces.IBitlyService.Shorten(System.String[],BitlyDotNET.Interfaces.StatusCode@)">
+            <summary>
+            Encodes multiple long URLs as shorter ones
+            </summary>
+            <param name="longUrls">An array of urls to shorten</param>
+            <param name="statusCode">The <see cref="T:BitlyDotNET.Interfaces.StatusCode">status code</see> returned by the request</param>
+            <returns>An array of responses (should be in the same order they were received)</returns>
         </member>
         <member name="M:BitlyDotNET.Implementations.BitlyService.#ctor">
             <summary>
@@ -126,42 +185,6 @@
             Gets the base URL of the bit.ly REST API
             </summary>
         </member>
-        <member name="T:BitlyDotNET.Exceptions.Reason">
-            <summary>
-            Defines the possible reasons for the library to throw an exception
-            </summary>
-        </member>
-        <member name="F:BitlyDotNET.Exceptions.Reason.CallForbidden">
-            <summary>
-            The library was unable to initiate a call to the API due to a lack of permissions.
-            <para>
-            	Usually, this happens when a <see href="http://msdn.microsoft.com/en-us/library/system.net.webpermission.aspx">System.Net.WebPermission</see> is thrown by the framework.
-            	You might want to add the following line in your config files to resolve this issue:
-            	<code><trust level="Medium" originUrl="https?://api\.bit\.ly/.+" /></code>
-            </para>
-            </summary>
-        </member>
-        <member name="F:BitlyDotNET.Exceptions.Reason.MethodNotFound">
-            <summary>
-            The requested file/method could not be found on the remote server
-            </summary>
-        </member>
-        <member name="F:BitlyDotNET.Exceptions.Reason.UnableToParseResponse">
-            <summary>
-            The API returned data in an unexpected format
-            </summary>
-        </member>
-        <member name="T:BitlyDotNET.Exceptions.BitlyDotNETException">
-            <summary>
-            Represents an exception that can be thrown by the library when a critical
-            condition prevents a successful communication with the API.
-            </summary>
-        </member>
-        <member name="P:BitlyDotNET.Exceptions.BitlyDotNETException.Reason">
-            <summary>
-            Gets the reason behind the creation of this exception
-            </summary>
-        </member>
         <member name="T:BitlyDotNET.Interfaces.StatusCode">
             <summary>
             Defines the possible return codes when calling the various methods in the library
@@ -215,6 +238,11 @@
         <member name="F:BitlyDotNET.Interfaces.StatusCode.PostError">
             <summary>
             There was a problem posting your request. Please try again.
+            </summary>
+        </member>
+        <member name="F:BitlyDotNET.Interfaces.StatusCode.RateLimitExceeded">
+            <summary>
+            You have exceeded your hourly rate limit for this method.
             </summary>
         </member>
         <member name="F:BitlyDotNET.Interfaces.StatusCode.PageNotFound">

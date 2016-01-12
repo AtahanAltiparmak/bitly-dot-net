@@ -4,3 +4,8 @@ C:\projects\BitlyDotNET\BitlyDotNET\obj\Debug\ResolveAssemblyReference.cache
 C:\projects\BitlyDotNET\BitlyDotNET\obj\Debug\BitlyDotNET.dll
 C:\projects\BitlyDotNET\BitlyDotNET\obj\Debug\BitlyDotNET.pdb
 C:\projects\BitlyDotNET\BitlyDotNET\bin\Debug\BitlyDotNET.xml
+C:\Repositories\bitly-dot-net\BitlyDotNET\bin\Debug\BitlyDotNET.xml
+C:\Repositories\bitly-dot-net\BitlyDotNET\bin\Debug\BitlyDotNET.dll
+C:\Repositories\bitly-dot-net\BitlyDotNET\bin\Debug\BitlyDotNET.pdb
+C:\Repositories\bitly-dot-net\BitlyDotNET\obj\Debug\BitlyDotNET.dll
+C:\Repositories\bitly-dot-net\BitlyDotNET\obj\Debug\BitlyDotNET.pdb

@@ -63,7 +63,7 @@ namespace BitlyDotNET.Implementations
 		/// <summary>
 		/// Gets the base URL of the bit.ly REST API
 		/// </summary>
-		private string ApiRestUrl { get { return "http://api.bit.ly"; } }
+		private string ApiRestUrl { get { return "http://api.bitly.com"; } }
 
 		#endregion
 

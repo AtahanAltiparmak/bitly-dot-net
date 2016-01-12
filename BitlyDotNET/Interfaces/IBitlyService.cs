@@ -79,7 +79,8 @@ namespace BitlyDotNET.Interfaces
         /// <summary>
         /// You have exceeded your hourly rate limit for this method.
         /// </summary>
-        RateLimitExceeded = 208,
+        RateLimitExceeded = 403,
+
 		/// <summary>
 		/// That page does not exist.
 		/// </summary>
